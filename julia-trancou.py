@@ -1,13 +1,13 @@
 import tweepy
 from time import sleep
 from datetime import datetime
-import credentials
+from os import environ
 
 # Define API keys
-CONSUMER_KEY = credentials.CONSUMER_KEY
-CONSUMER_SECRET = credentials.CONSUMER_SECRET
-ACCESS_KEY = credentials.ACCESS_KEY
-ACCESS_SECRET = credentials.ACCESS_SECRET
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
 # Define time constants
 SECONDS_PER_MINUTE = 60
