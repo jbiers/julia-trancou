@@ -1,5 +1,5 @@
 # julia-trancou
-Um bot no twitter que twitta diariamente sobre meu status acadêmico. Tranquei ou não a faculdade?
+Um bot no Twitter que twitta diariamente sobre meu status acadêmico. Tranquei ou não a faculdade?
 
 ## O que aprendi com esse projeto?
 - Sobre o uso de APIs, no caso a do Twitter. Tive que fazer uma requisição para uso em projetos de hobby e entender como o wrapper Tweepy funciona.
