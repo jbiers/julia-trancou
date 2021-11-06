@@ -22,3 +22,8 @@ Um bot no Twitter que twitta diariamente sobre meu status acadêmico. Tranquei o
 - O mês não deverá ser um número, mas sim por extenso (Novembro, em vez de mês 11).
 
 - Devo ainda implementar toda a parte de integração com o Whatsapp.
+
+
+## Where I left:
+- Não usar env variable para dia, mas sim um arquivo de texto.
+- Não consigo usar o github e o heroku, pesquisar sobre deploying pelo github.
