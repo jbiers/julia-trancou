@@ -1,5 +1,4 @@
 import tweepy
-from time import sleep
 from datetime import datetime
 from os import environ
 
@@ -14,6 +13,26 @@ SECONDS_PER_MINUTE = 60
 MINUTES_PER_HOUR = 60
 HOURS_IN_DAY = 24
 
+# TODO: MAKE FILE INSTEAD OF ENV VARIABLE
+# Define date for last post
+last_post_day = environ['LAST_POST_DAY']
+
+# Define a calendar array to print out the months by their names in Portuguese
+CALENDAR = [
+    '',
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro']
+
 # Authenticate to Twitter using the defined constants
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -25,12 +44,18 @@ now = datetime.today()
 
 
 def tweet_college_status():
-    api.update_status("Julia não trancou a faculdade até o dia " +
-                      str(now.day + 1) + " do mês " + str(now.month) + ".")
-    print("Tweeting status...")
+    # Only post tweet if last update was made the day before
+    if (now.day != int(last_post_day)):
+        api.update_status("Julia não trancou a faculdade até o dia " +
+                          str(now.day) + " de " + CALENDAR[now.month] + ".")
+
+        print("Tweeting status...")
+
+        # Save time to environment variable
+        environ['LAST_POST_DAY'] = str(now.day)
+
+    else:
+        print("Status was already updated today.")
 
 
-while True:
-    now = datetime.today()
-    tweet_college_status()
-    sleep(SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_IN_DAY)
+tweet_college_status()
