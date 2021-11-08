@@ -1,6 +1,7 @@
 # julia-trancou
 Um bot no Twitter que twitta diariamente sobre meu status acadêmico. Tranquei ou não a faculdade?
 
+
 ## O que aprendi com esse projeto?
 - Sobre o uso de APIs, no caso a do Twitter. Tive que fazer uma requisição para uso em projetos de hobby e entender como o wrapper Tweepy funciona.
 
@@ -12,18 +13,21 @@ Um bot no Twitter que twitta diariamente sobre meu status acadêmico. Tranquei o
   - Utilizando a versão gratuita do Heroku.
   - Compreender qual o consumo de "dynos" do meu app, visto que a versão gratuita tem um limite de horas de uso.
 
+- Manipular arquivos com Python.
+
+
 ## O que ainda falta?
 - Adicionar foto de perfil e capa ao perfil.
 
-- Adaptá-lo ao modelo Heroku Scheduler, que economizará no número de horas.
+- ~~Adaptá-lo ao modelo Heroku Scheduler, que economizará no número de horas.~~
 
-- Script deverá ser executado uma vez por dia, postando um Tweet que informa se tranquei ou não, dia e mês.
+- ~~Script deverá ser executado uma vez por dia, postando um Tweet que informa se tranquei ou não, dia e mês.~~
 
-- O mês não deverá ser um número, mas sim por extenso (Novembro, em vez de mês 11).
+- ~~O mês não deverá ser um número, mas sim por extenso (Novembro, em vez de mês 11).~~
 
 - Devo ainda implementar toda a parte de integração com o Whatsapp.
 
 
-## Where I left:
-- Não usar env variable para dia, mas sim um arquivo de texto.
-- Não consigo usar o github e o heroku, pesquisar sobre deploying pelo github.
+## O que devo estudar mais:
+- Git e Github,version control.
+- Deploying applications.
