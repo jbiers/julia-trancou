@@ -8,14 +8,9 @@ CONSUMER_SECRET = environ['CONSUMER_SECRET']
 ACCESS_KEY = environ['ACCESS_KEY']
 ACCESS_SECRET = environ['ACCESS_SECRET']
 
-# Define time constants
-SECONDS_PER_MINUTE = 60
-MINUTES_PER_HOUR = 60
-HOURS_IN_DAY = 24
-
-# TODO: MAKE FILE INSTEAD OF ENV VARIABLE
 # Define date for last post
-last_post_day = environ['LAST_POST_DAY']
+file = open("last-post-day.txt", "r+")
+last_post_day = int(file.read())
 
 # Define a calendar array to print out the months by their names in Portuguese
 CALENDAR = [
@@ -45,17 +40,20 @@ now = datetime.today()
 
 def tweet_college_status():
     # Only post tweet if last update was made the day before
-    if (now.day != int(last_post_day)):
+    if (now.day != last_post_day):
         api.update_status("Julia não trancou a faculdade até o dia " +
                           str(now.day) + " de " + CALENDAR[now.month] + ".")
 
         print("Tweeting status...")
 
         # Save time to environment variable
-        environ['LAST_POST_DAY'] = str(now.day)
+        file.seek(0)
+        file.write(str(now.day))
 
     else:
         print("Status was already updated today.")
 
 
 tweet_college_status()
+
+file.close()
