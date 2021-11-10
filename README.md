@@ -22,7 +22,7 @@ A ideia veio de uma brincadeira entre amigos sobre meu descontentamento com o cu
 
 
 ## O que ainda falta?
-- Adicionar foto de perfil e capa ao perfil.
+- ~~Adicionar foto de perfil e capa ao perfil.~~
 
 - ~~Adaptá-lo ao modelo Heroku Scheduler, que economizará no número de horas.~~
 
@@ -30,7 +30,7 @@ A ideia veio de uma brincadeira entre amigos sobre meu descontentamento com o cu
 
 - ~~O mês não deverá ser um número, mas sim por extenso (Novembro, em vez de mês 11).~~
 
-- Devo ainda implementar toda a parte de integração com o Whatsapp.
+- Devo ainda implementar toda a parte de pedir resposta do usuário, e para isso deve usar base de dados do heroku.
 
 
 ## O que devo estudar mais:
